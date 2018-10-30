@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol id="order">
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+</body>
+</html>
+
+<script>
+// Question 1
+const containerHandle = document.getElementById('container');
+console.log(containerHandle); 
+// write the necessary code and console log the output
+// Question 2
+const container2Handle = document.querySelector('#container');
+console.log(container2Handle);
+// Question 3
+const listWithClass = document.querySelector('.second'); 
+console.log(listWithClass); 
+// Question 4 
+const classThree = document.querySelector('ol li.third');
+console.log(classThree);
+//question 5
+let helloText = document.getElementById('container');
+helloText.value = 'Hello';
+console.log(helloText.value);
+//question 6
+let addClass = document.getElementsByClassName('footer');
+addClass[0].classList.add('main');
+console.log(addClass,'...add');
+//question 7
+addClass[0].classList.remove('main');
+//question 8
+let li = document.createElement('li');
+//question 9
+li.appendChild(document.createTextNode('four'));
+//question 10
+let firstClass = document.getElementsByClassName('first');
+firstClass[0].parentNode.appendChild(li);
+//question 11
+let collection = document.getElementById('order').childNodes;
+console.log(collection,'...col',collection.length);
+for(let i = 1; i < collection.length; i+=2){
+    console.log(collection[i]); 
+    if(collection[i]){
+        //  console.log(collection[i],'...value');
+    collection[i].style.backgroundColor = 'green';
+    } 
+};
+//question 12
+console.log(addClass[0].classList);
+addClass[0].classList.remove('footer');
+</script>

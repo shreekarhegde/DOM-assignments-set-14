@@ -1,0 +1,55 @@
+<head>
+    <style>
+        /* .brdr-color {
+            border: 2px solid;
+        } */
+    </style>
+</head>
+
+<body id="body">
+    <div class="row">
+        <div class="col-md-3" id="parent">
+            <img class="img" src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2010/4/29/1272542412057/The-new-characters-from-S-009.jpg?width=300&quality=85&auto=format&usm=12&fit=max&s=38493fb8bbb1d5f56ff15fb22b7a0c71"
+                height="65" width="65">
+            <img class="img" src="https://cdn.arstechnica.net/journals/thumbs.media/272/250/sstthd_ken-1.jpg" height="65"
+                width="65">
+            <img class="img" src="http://digitalspyuk.cdnds.net/15/37/768x546/gallery_gaming_sfchunli.png" height="65"
+                width="65">
+            <img class="img" src="https://vignette.wikia.nocookie.net/streetfighter/images/0/05/SFVHonda.jpg/revision/latest?cb=20160629140718"
+                height="65" width="65">
+        </div>
+    </div>
+
+</body>
+<script>
+    let img = document.querySelectorAll('.img');
+    img[0].style.border = 'thick solid #000000';
+    let bodyHandle = document.getElementById('body');
+    let i = 0;
+    bodyHandle.addEventListener('keydown', function (event) {
+        img[0].style.border = '';
+        if (event.which == 39) {
+            i++; 
+            if (i <= img.length) {
+                img[i].previousElementSibling.style.border = '';
+                img[i].style.border = '';
+                console.log(i,'from if')
+                img[i] = img.nextElementSibling;
+                img[i].style.border = 'thick solid #000000';
+                img[i].previousElementSibling.style.border = '';
+            }
+            else if (i >= img.length) {
+                i = 0;
+                img[i].style.border = 'thick solid #000000';  
+             }
+        }
+        else if (event.which == 37) {
+            i--;
+            img[i].style.border = 'thick solid #000000';
+            img[i].nextElementSibling.style.border = '';
+        }
+    })
+
+
+
+</script>
